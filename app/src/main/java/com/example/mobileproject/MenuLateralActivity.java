@@ -3,6 +3,7 @@ package com.example.mobileproject;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -20,11 +21,15 @@ public class MenuLateralActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuLateralBinding binding;
+    private SesionUser sesionUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        sesionUser = (SesionUser) getIntent().getSerializableExtra("User");
+        String mostrar = sesionUser.users.getUsers();
+        Toast.makeText(this, mostrar, Toast.LENGTH_SHORT).show();
         binding = ActivityMenuLateralBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

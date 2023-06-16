@@ -1,8 +1,12 @@
 package com.example.mobileproject.ui.home;
 
+import android.widget.TextView;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import org.w3c.dom.Text;
 
 public class HomeViewModel extends ViewModel {
 
@@ -10,7 +14,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Hola");
     }
 
     public LiveData<String> getText() {
