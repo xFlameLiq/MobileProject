@@ -10,17 +10,18 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn;
+    private SesionUser sesionUser = new SesionUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn = (Button) findViewById(R.id.btn);
+        btn = (Button) findViewById(R.id.btnWelcome);
 
-        // hola xd
     }
 
     public void main (View view) {
-        Intent intent = new Intent(this, MenuLateralActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("User", sesionUser);
         startActivity(intent);
         finish();
     }
