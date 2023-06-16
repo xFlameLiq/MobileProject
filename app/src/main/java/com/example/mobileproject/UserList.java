@@ -10,6 +10,7 @@ public class UserList implements Serializable {
     public User[] user;
     private final int REGISTERS = 5;
     int count;
+    int verificador;
 
     public UserList() {
         this.user = new User[REGISTERS];
@@ -29,11 +30,13 @@ public class UserList implements Serializable {
     }
 
     public int validateUser(String email, String pass) {
+        this.verificador = 0;
         for (int i = 0; i < this.count; i++) {
             if( email.equals(this.user[i].getEmail()) && pass.equals(this.user[i].getPass()) ) {
                 System.out.println("Encontrado");
                 return 1;
             }
+            this.verificador++;
         }
         return -1;
     }
@@ -46,6 +49,10 @@ public class UserList implements Serializable {
                     "Id: " + this.user[i].getId() + "\n\n";
         }
         return mostrar;
+    }
+
+    public int returnUser() {
+        return this.verificador;
     }
 
 }

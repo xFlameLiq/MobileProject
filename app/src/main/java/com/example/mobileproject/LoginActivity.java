@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobileproject.ui.home.HomeFragment;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText txtEmailLogin, txtPassLogin;
@@ -30,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Usuario encontrado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MenuLateralActivity.class);
             intent.putExtra("User", sesionUser);
+            Intent intentHome = new Intent(this, HomeFragment.class);
+            intentHome.putExtra("User", sesionUser);
             startActivity(intent);
         } else {
             Toast.makeText(this, "No encontrado", Toast.LENGTH_SHORT).show();

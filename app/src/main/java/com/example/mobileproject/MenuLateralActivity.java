@@ -28,8 +28,9 @@ public class MenuLateralActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         sesionUser = (SesionUser) getIntent().getSerializableExtra("User");
-        String mostrar = sesionUser.users.getUsers();
-        Toast.makeText(this, mostrar, Toast.LENGTH_SHORT).show();
+        //String mostrar = sesionUser.users.getUsers();
+        //Toast.makeText(this, mostrar, Toast.LENGTH_SHORT).show();
+
         binding = ActivityMenuLateralBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
