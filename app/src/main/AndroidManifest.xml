@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MobileProject"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuLateralActivity"
             android:exported="false"
             android:label="@string/title_activity_menu_lateral"
