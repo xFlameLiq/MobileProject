@@ -130,7 +130,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnCreate" />
 
     <Spinner
-        android:id="@+id/spGroup"
+        android:id="@+id/spGrade"
         android:layout_width="98dp"
         android:layout_height="29dp"
         android:layout_marginTop="24dp"
@@ -139,13 +139,13 @@
         app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
 
     <TextView
-        android:id="@+id/txtGroup"
+        android:id="@+id/txtGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
-        android:text="Grupo"
-        app:layout_constraintEnd_toStartOf="@+id/spGroup"
+        android:text="Grade"
+        app:layout_constraintEnd_toStartOf="@+id/spGrade"
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
