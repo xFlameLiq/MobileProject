@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn = (Button) findViewById(R.id.btn);
 
-
+        // hola xd
     }
 
     public void main (View view) {
