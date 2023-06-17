@@ -7,7 +7,7 @@ public class SesionUser implements Serializable {
 
     public UserList users;
     ArrayList<Subjects> subjects = new ArrayList();
-    private Subjects subjectsObj = new Subjects("", "");
+    private Subjects subjectsObj = new Subjects("pruebitaxd", "");
 
 
     public SesionUser() {
