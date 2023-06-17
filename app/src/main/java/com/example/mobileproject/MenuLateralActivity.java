@@ -1,6 +1,8 @@
 package com.example.mobileproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
@@ -68,5 +70,23 @@ public class MenuLateralActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_lateral);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch(id) {
+            case R.id.itmCerrar:
+                logout();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void logout() {
+        Intent logout = new Intent(this, LoginActivity.class);
+        logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        logout.putExtra("User", sesionUser);
+        startActivity(logout);
+        finish();
     }
 }
