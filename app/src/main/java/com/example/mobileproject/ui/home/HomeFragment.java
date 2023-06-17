@@ -30,14 +30,14 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
 
-        final TextView textView = binding.txtBienvenida;
+
 
         int verificador = (sesionUser.users.returnUser());
         txtDatos = binding.txtDatos;
 
         txtDatos.setText(sesionUser.users.user[verificador].getEmail());
 
-
+        final TextView textView = binding.txtBienvenida;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
