@@ -29,12 +29,15 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         final TextView textView = binding.txtBienvenida;
+
         int verificador = (sesionUser.users.returnUser());
         txtDatos = binding.txtDatos;
 
         txtDatos.setText(sesionUser.users.user[verificador].getEmail());
-        
+
+
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
