@@ -15,7 +15,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Ingrese su correo"
+        android:hint="@string/email"
         android:inputType="text"
         android:textAlignment="center"
         android:textColorHint="#99000000"
@@ -29,15 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Ingrese nombre"
+        android:hint="@string/name"
         android:inputType="text"
         android:textAlignment="center"
         android:textColorHint="#99000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -49,7 +49,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Ingrese apellidos"
+        android:hint="@string/last_name"
         android:inputType="text"
         android:textAlignment="center"
         android:textColorHint="#99000000"
@@ -67,21 +67,20 @@
         android:layout_marginEnd="156dp"
         android:backgroundTint="#0067b2"
         android:onClick="register"
-        android:text="Registrarme"
+        android:text="@string/register"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStudentID2" />
 
     <Button
         android:id="@+id/btnGoToLogin"
         android:layout_width="114dp"
         android:layout_height="41dp"
-        android:layout_marginTop="12dp"
         android:backgroundTint="#0067b2"
         android:onClick="goToLogin"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Ingrese contraseña"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#99000000"
@@ -101,21 +100,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmailRegister" />
-
-    <EditText
-        android:id="@+id/txtStudentID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Ingrese código"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColorHint="#99000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassRegister" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -132,11 +116,11 @@
         android:id="@+id/txtAsk"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginTop="8dp"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCreate" />
 
@@ -144,21 +128,35 @@
         android:id="@+id/spGrade"
         android:layout_width="98dp"
         android:layout_height="29dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStudentID2" />
 
     <TextView
         android:id="@+id/txtGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:text="Grade"
         app:layout_constraintEnd_toStartOf="@+id/spGrade"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
+        app:layout_constraintTop_toBottomOf="@+id/txtStudentID2" />
+
+    <EditText
+        android:id="@+id/txtStudentID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/code"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#99000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassRegister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

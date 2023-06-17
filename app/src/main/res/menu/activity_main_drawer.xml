@@ -11,20 +11,23 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@mipmap/img"
-            android:title="Subjects" />
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@mipmap/img_1"
-            android:title="Calendar" />
+            android:title="@string/menu_calendar" />
         <item
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/fragment_subjects"
+            android:icon="@mipmap/img"
+            android:title="@string/menu_subjects" />
         <item
+            android:id="@+id/fragment_contacts"
             android:icon="@mipmap/img_2"
-            android:title="Contacts" />
+            android:title="@string/menu_contacts" />
         <item
+            android:id="@+id/fragment_location"
             android:icon="@mipmap/img_4"
-            android:title="Location" />
+            android:title="@string/menu_location" />
     </group>
 </menu>
