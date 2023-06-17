@@ -10,13 +10,12 @@
         android:id="@+id/imageView3"
         android:layout_width="198dp"
         android:layout_height="141dp"
+        android:layout_marginBottom="508dp"
         android:src="@mipmap/logo_ceti"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtBienvenida"
@@ -35,12 +34,16 @@
         android:id="@+id/txtDatos"
         android:layout_width="223dp"
         android:layout_height="154dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:background="#C4BBE5F8"
         android:text="Datos del alumno:"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBienvenida" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBienvenida" /><![CDATA[
+=======
+        app:layout_constraintTop_toTopOf="parent" />
+
+    >>>>>>> backend
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

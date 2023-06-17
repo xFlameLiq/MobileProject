@@ -12,6 +12,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText txtEmailRegister, txtPassRegister;
     private SesionUser sesionUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void register(View view) {
         String email = txtEmailRegister.getText().toString();
         String pass = txtPassRegister.getText().toString();
-        User user = new User(email, pass);
+        User user = new User(email, pass, 0);
         int successful = sesionUser.users.addUser(user);
         if (successful > 0) {
             Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
