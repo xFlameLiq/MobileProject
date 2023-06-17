@@ -41,7 +41,7 @@ public class UserList implements Serializable {
         return -1;
     }
 
-    public String  getUsers() {
+    public String getUsers() {
         String mostrar = "";
         for (int i = 0; i < this.count; i++) {
             mostrar += "Email: " + this.user[i].getEmail() + "\n" +

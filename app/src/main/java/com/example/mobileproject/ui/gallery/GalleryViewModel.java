@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.mobileproject.R;
 
-import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
+//import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
 
 public class GalleryViewModel extends ViewModel {
 
@@ -16,7 +16,7 @@ public class GalleryViewModel extends ViewModel {
 
     public GalleryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Galería del CETI COLOMOS");
     }
 
     public LiveData<String> getText() {
