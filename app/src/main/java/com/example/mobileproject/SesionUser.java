@@ -12,7 +12,7 @@ public class SesionUser implements Serializable {
     }
 
     public void init() {
-        User admin = new User("admin", "admin", 0);
+        User admin = new User(0, "David", "Loera", "Admin", "Admin", "21110121", 5);
         users.addUser(admin);
     }
 

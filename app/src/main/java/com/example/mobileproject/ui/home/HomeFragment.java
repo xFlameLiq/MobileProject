@@ -35,7 +35,13 @@ public class HomeFragment extends Fragment {
         int verificador = (sesionUser.users.returnUser());
         txtDatos = binding.txtDatos;
 
-        txtDatos.setText(sesionUser.users.user[verificador].getEmail());
+        String infoPerfil = "Nombre: " + sesionUser.users.user[verificador].getNombre() + "\n" +
+                            "Apellido: " + sesionUser.users.user[verificador].getApellido() + "\n" +
+                            "Correo electronico: " + sesionUser.users.user[verificador].getEmail() + "\n" +
+                            "Contraseña: " + sesionUser.users.user[verificador].getPass() + "\n" +
+                            "Registro: " + sesionUser.users.user[verificador].getRegistro() + "\n" +
+                            "Grado: " + sesionUser.users.user[verificador].getGrado();
+        txtDatos.setText(infoPerfil);
 
         final TextView textView = binding.txtBienvenida;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
