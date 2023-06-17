@@ -18,15 +18,15 @@
             android:icon="@mipmap/img_1"
             android:title="@string/menu_calendar" />
         <item
-            android:id="@+id/nav_subjects"
+            android:id="@+id/fragment_subjects"
             android:icon="@mipmap/img"
             android:title="@string/menu_subjects" />
         <item
-            android:id="@+id/nav_contacts"
+            android:id="@+id/fragment_contacts"
             android:icon="@mipmap/img_2"
             android:title="@string/menu_contacts" />
         <item
-            android:id="@+id/nav_location"
+            android:id="@+id/fragment_location"
             android:icon="@mipmap/img_4"
             android:title="@string/menu_location" />
     </group>
