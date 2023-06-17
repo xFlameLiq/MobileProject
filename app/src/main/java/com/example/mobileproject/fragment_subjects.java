@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.mobileproject.databinding.FragmentHomeBinding;
+import com.example.mobileproject.databinding.FragmentSubjectsBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,11 @@ public class fragment_subjects extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private SesionUser sesionUser;
+    private TextView txtDebug;
+
+    private FragmentSubjectsBinding binding;
 
     public fragment_subjects() {
         // Required empty public constructor
@@ -53,12 +62,31 @@ public class fragment_subjects extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_subjects, container, false);
+        sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
+        int verificador = (sesionUser.users.returnUser());
+        txtDebug = rootView.findViewById(R.id.txtDebug);
+        String infoPerfil = "Nombre: " + sesionUser.users.user[verificador].getNombre() + "\n" +
+                "Apellido: " + sesionUser.users.user[verificador].getApellido() + "\n" +
+                "Correo electronico: " + sesionUser.users.user[verificador].getEmail() + "\n" +
+                "Contraseña: " + sesionUser.users.user[verificador].getPass() + "\n" +
+                "Registro: " + sesionUser.users.user[verificador].getRegistro() + "\n" +
+                "Grado: " + sesionUser.users.user[verificador].getGrado() + "\n" +
+                "Materia: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameSub() + "\n" +
+                "Profesor: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameTea();
+
+        txtDebug.setText(infoPerfil);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_subjects, container, false);
+        //return inflater.inflate(R.layout.fragment_subjects, container, false);
+        return rootView;
     }
 }

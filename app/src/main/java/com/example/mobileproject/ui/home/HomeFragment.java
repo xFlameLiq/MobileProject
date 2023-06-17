@@ -40,7 +40,8 @@ public class HomeFragment extends Fragment {
                             "Correo electronico: " + sesionUser.users.user[verificador].getEmail() + "\n" +
                             "Contraseña: " + sesionUser.users.user[verificador].getPass() + "\n" +
                             "Registro: " + sesionUser.users.user[verificador].getRegistro() + "\n" +
-                            "Grado: " + sesionUser.users.user[verificador].getGrado();
+                            "Grado: " + sesionUser.users.user[verificador].getGrado() + "\n" +
+                            "Materias: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameSub();
         txtDatos.setText(infoPerfil);
 
         final TextView textView = binding.txtBienvenida;

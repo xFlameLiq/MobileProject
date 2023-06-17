@@ -34,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("User", sesionUser);
             Intent intentHome = new Intent(this, HomeFragment.class);
             intentHome.putExtra("User", sesionUser);
+            Intent intentSubjects = new Intent(this, fragment_subjects.class);
+            intentSubjects.putExtra("User", sesionUser);
             startActivity(intent);
         } else {
             Toast.makeText(this, "No encontrado", Toast.LENGTH_SHORT).show();

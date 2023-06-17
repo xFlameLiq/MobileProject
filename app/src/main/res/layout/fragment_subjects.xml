@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".fragment_subjects">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="fragment subjects"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/txtDebug"
+            android:layout_width="410dp"
+            android:layout_height="385dp"
+            android:text="TextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

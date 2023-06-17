@@ -1,6 +1,7 @@
 package com.example.mobileproject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable {
 
@@ -11,11 +12,13 @@ public class User implements Serializable {
     private String pass;
     private String registro;
     private int grado;
+    private ArrayList<Subjects> subjects = new ArrayList<>();
+
 
     public User() {
     }
 
-    public User(int id, String nombre, String apellido, String email, String pass, String registro, int grado) {
+    public User(int id, String nombre, String apellido, String email, String pass, String registro, int grado, ArrayList<Subjects> subjects) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,6 +26,7 @@ public class User implements Serializable {
         this.pass = pass;
         this.registro = registro;
         this.grado = grado;
+        this.subjects = subjects;
     }
 
     public int getId() {
@@ -79,5 +83,13 @@ public class User implements Serializable {
 
     public void setGrado(int grado) {
         this.grado = grado;
+    }
+
+    public ArrayList<Subjects> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(ArrayList<Subjects> subjects) {
+        this.subjects = subjects;
     }
 }
