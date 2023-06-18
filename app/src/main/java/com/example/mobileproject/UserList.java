@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class UserList extends AppCompatActivity implements Serializable {
 
     public User[] user;
-    private final int REGISTERS = 5;
+    private final int REGISTERS = 15;
     int count;
     int verificador;
 
@@ -74,7 +74,7 @@ public class UserList extends AppCompatActivity implements Serializable {
                         "Registro: " + this.user[i].getRegistro() + "\n" +
                         "Correo: " + this.user[i].getEmail() + "\n" +
                         "Gmail: a" + this.user[i].getRegistro() + "@ceti.mx \n" +
-                        "Hotmail: A" + this.user[i].getApellido() + "@live.ceti.mx \n" +
+                        "Hotmail: A" + this.user[i].getRegistro() + "@live.ceti.mx \n" +
                         "Semestre: " + this.user[i].getGrado() + " | FEB-JUN 2023\n";
             }
         }

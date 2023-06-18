@@ -49,12 +49,20 @@ public class RegisterActivity extends AppCompatActivity {
 
         int grado = Integer.parseInt(spGrade.getSelectedItem().toString());
 
-        User user = new User(0, nombre, apellido, email, pass, registro, grado, subjects);
-        int successful = sesionUser.users.addUser(user);
-        if (successful > 0) {
-            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "LIMITE ALCANZADO", Toast.LENGTH_SHORT).show();
+        if(!(nombre.equals("") || apellido.equals("") || email.equals("") || pass.equals("") || registro.equals(""))) {
+
+            User user = new User(0, nombre, apellido, email, pass, registro, grado, subjects);
+            int successful = sesionUser.users.addUser(user);
+            if (successful > 0) {
+                Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                goToLogin(view);
+            } else {
+                Toast.makeText(this, "LIMITE ALCANZADO", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        else {
+            Toast.makeText(this, "Por favor llena todos los campos del registro", Toast.LENGTH_SHORT).show();
         }
     }
 
