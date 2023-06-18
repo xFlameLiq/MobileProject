@@ -33,6 +33,15 @@
     <string name="btnAddSubject">Añadir Materia</string>
     <string name="btnRefreshSubject">Refrescar</string>
     <!--  MENU DE SUBJECTS  -->
+
+    <!--  FRAGMENT DE CONTACTS  -->
+    <string name="titleContacts">Contacts</string>
+    <!--  FRAGMENT DE CONTACTS  -->
+
+    <!--  FRAGMENT DE CALENDAR  -->
+    <string name="titleCalendar">Calendario 2023</string>
+    <!--  FRAGMENT DE CALENDAR  -->
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>

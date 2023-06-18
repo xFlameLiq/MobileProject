@@ -9,10 +9,10 @@
 
     <EditText
         android:id="@+id/txtEmailRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:hint="@string/email"
@@ -20,13 +20,13 @@
         android:textAlignment="center"
         android:textColorHint="#99000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLastNameRegister" />
 
     <EditText
         android:id="@+id/txtNameRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="4dp"
@@ -37,13 +37,13 @@
         android:textAlignment="center"
         android:textColorHint="#99000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/txtLastNameRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
@@ -54,7 +54,7 @@
         android:textAlignment="center"
         android:textColorHint="#99000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNameRegister" />
 
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="156dp"
         android:backgroundTint="#0067b2"
         android:onClick="register"
@@ -78,6 +78,7 @@
         android:id="@+id/btnGoToLogin"
         android:layout_width="114dp"
         android:layout_height="41dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#0067b2"
         android:onClick="goToLogin"
         android:text="@string/login"
@@ -88,7 +89,7 @@
 
     <EditText
         android:id="@+id/txtPassRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -97,7 +98,6 @@
         android:textAlignment="center"
         android:textColorHint="#99000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmailRegister" />
 
@@ -116,7 +116,8 @@
         android:id="@+id/txtAsk"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:text="HAVE YOU ALREADY ACOUNT ?"
+        android:layout_marginTop="20dp"
+        android:text="HAVE YOU ALREADY ACCOUNT?"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,8 +129,8 @@
         android:id="@+id/spGrade"
         android:layout_width="98dp"
         android:layout_height="29dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="84dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
 
@@ -137,17 +138,18 @@
         android:id="@+id/txtGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="112dp"
         android:text="Grade"
+        android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/spGrade"
-        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtStudentID" />
 
     <EditText
         android:id="@+id/txtStudentID"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
