@@ -25,20 +25,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validateLogin(View view) {
-        String email = txtEmailLogin.getText().toString();
-        String pass = txtPassLogin.getText().toString();
-        int found = this.sesionUser.users.validateUser(email,pass);
-        if(found > 0) {
-            Toast.makeText(this, "Usuario encontrado", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MenuLateralActivity.class);
-            intent.putExtra("User", sesionUser);
-            Intent intentHome = new Intent(this, HomeFragment.class);
-            intentHome.putExtra("User", sesionUser);
-            Intent intentSubjects = new Intent(this, fragment_subjects.class);
-            intentSubjects.putExtra("User", sesionUser);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "No encontrado", Toast.LENGTH_SHORT).show();
+        if(!(txtEmailLogin.getText().toString().equals("") || txtPassLogin.getText().toString().equals(""))) {
+            String email = txtEmailLogin.getText().toString();
+            String pass = txtPassLogin.getText().toString();
+            int found = this.sesionUser.users.validateUser(email,pass);
+            if(found > 0) {
+                Toast.makeText(this, "Usuario encontrado", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MenuLateralActivity.class);
+                intent.putExtra("User", sesionUser);
+                Intent intentHome = new Intent(this, HomeFragment.class);
+                intentHome.putExtra("User", sesionUser);
+                Intent intentSubjects = new Intent(this, fragment_subjects.class);
+                intentSubjects.putExtra("User", sesionUser);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "No encontrado", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        else {
+            Toast.makeText(this, "Por favor llena todos los campos del login", Toast.LENGTH_SHORT).show();
         }
     }
 

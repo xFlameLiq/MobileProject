@@ -40,19 +40,6 @@ public class HomeFragment extends Fragment {
         txtBienvenida = binding.txtBienvenida;
         txtDatos = binding.txtDatos;
 
-        /* String infoPerfil = "Nombre: " + sesionUser.users.user[verificador].getNombre() + "\n" +
-                            "Apellido: " + sesionUser.users.user[verificador].getApellido() + "\n" +
-                            "Correo electronico: " + sesionUser.users.user[verificador].getEmail() + "\n" +
-                            "Contraseña: " + sesionUser.users.user[verificador].getPass() + "\n" +
-                            "Registro: " + sesionUser.users.user[verificador].getRegistro() + "\n" +
-
-                            "Grado: " + sesionUser.users.user[verificador].getGrado() + "\n" +
-                            "Materias: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameSub();
-        txtDatos.setText(infoPerfil);
-
-                            "Grado: " + sesionUser.users.user[verificador].getGrado();
-        txtDatos.setText(infoPerfil); */
-
         txtDatos.setText("");
         txtBienvenida.setText("Bienvenido " + sesionUser.users.user[verificador].getNombre() + " " + sesionUser.users.user[verificador].getApellido());
 
@@ -97,7 +84,7 @@ public class HomeFragment extends Fragment {
                     break;
 
                 case 2:
-                    data1 = createTableCell("student ID: " + sesionUser.users.user[verificador].getId(), false);
+                    data1 = createTableCell("ID: " + sesionUser.users.user[verificador].getRegistro(), false);
                     dataRow.addView(data1);
                     break;
             }
@@ -127,7 +114,7 @@ public class HomeFragment extends Fragment {
             switch (i) {
 
                 case 0:
-                    data3 = createTableCell("Semestre: " + sesionUser.users.user[verificador].getGrado(), false);
+                    data3 = createTableCell("Grado: " + sesionUser.users.user[verificador].getGrado(), false);
                     dataRow.addView(data3);
                     break;
 

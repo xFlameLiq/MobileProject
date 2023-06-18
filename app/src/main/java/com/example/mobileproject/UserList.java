@@ -3,12 +3,14 @@ package com.example.mobileproject;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.Serializable;
 
-public class UserList implements Serializable {
+public class UserList extends AppCompatActivity implements Serializable {
 
     public User[] user;
-    private final int REGISTERS = 5;
+    private final int REGISTERS = 15;
     int count;
     int verificador;
 
@@ -55,4 +57,28 @@ public class UserList implements Serializable {
         return this.verificador;
     }
 
+    public boolean findUser(String registro) {
+
+        for (int i = 0; i < this.count; i++)
+            if( registro.equals(this.user[i].getRegistro()) )  return true;
+
+        return false;
+    }
+
+    public String showUser(String registro) {
+
+        for (int i = 0; i < this.count; i++) {
+            if (registro.equals(this.user[i].getRegistro())) {
+                return  "Nombre: " + this.user[i].getNombre() + "\n" +
+                        "Apellido: " + this.user[i].getApellido() + "\n" +
+                        "Registro: " + this.user[i].getRegistro() + "\n" +
+                        "Correo: " + this.user[i].getEmail() + "\n" +
+                        "Gmail: a" + this.user[i].getRegistro() + "@ceti.mx \n" +
+                        "Hotmail: A" + this.user[i].getRegistro() + "@live.ceti.mx \n" +
+                        "Semestre: " + this.user[i].getGrado() + " | FEB-JUN 2023\n";
+            }
+        }
+
+        return "Parece que hubo un error al mostrar los datos...";
+    }
 }
