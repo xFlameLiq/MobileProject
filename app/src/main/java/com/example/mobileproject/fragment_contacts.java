@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,10 @@ public class fragment_contacts extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private SesionUser sesionUser;
+    private EditText txtRegistro;
+    private Button btnFindStudent;
+    private TextView lbShowInfoStudent;
 
     public fragment_contacts() {
         // Required empty public constructor
@@ -59,6 +68,30 @@ public class fragment_contacts extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contacts, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
+
+        txtRegistro = rootView.findViewById(R.id.txtRegistro);
+        btnFindStudent = rootView.findViewById(R.id.btnFindStudent);
+        lbShowInfoStudent = rootView.findViewById(R.id.lbShowInfoStudent);
+        // sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
+
+        btnFindStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
+                String registroIngresado = txtRegistro.getText().toString();
+
+                if(sesionUser.users.findUser(registroIngresado)) {
+                    Toast.makeText(requireContext(), "Registro encontrado", Toast.LENGTH_SHORT).show();
+                    lbShowInfoStudent.setText(sesionUser.users.showUser(registroIngresado));
+                } else {
+                    Toast.makeText(requireContext(), "El registro no fue encontrado", Toast.LENGTH_SHORT).show();
+                    lbShowInfoStudent.setText("Registro incorrecto...");
+                }
+            }
+        });
+
+        return rootView;
     }
 }
