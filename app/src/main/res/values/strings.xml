@@ -27,7 +27,7 @@
     <string name="menu_calendar">Calendar</string>
     <!--  MENU DE SUBJECTS  -->
     <string name="menu_subjects">Subjects</string>
-    <string name="titleSubjects">Materias</string>
+    <string name="titleSubjects">Subjects</string>
     <string name="nameSubject">Ingrese el nombre de la materia</string>
     <string name="nameTeacSubject">Ingrese el nombre del profesor</string>
     <string name="btnAddSubject">Añadir Materia</string>

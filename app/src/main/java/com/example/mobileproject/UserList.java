@@ -13,10 +13,12 @@ public class UserList extends AppCompatActivity implements Serializable {
     private final int REGISTERS = 15;
     int count;
     int verificador;
+    int subjectCount;
 
     public UserList() {
         this.user = new User[REGISTERS];
         this.count = 0;
+        this.subjectCount = -1;
     }
 
     public int addUser(User user) {
@@ -81,4 +83,14 @@ public class UserList extends AppCompatActivity implements Serializable {
 
         return "Parece que hubo un error al mostrar los datos...";
     }
+
+    public int addSubjectCount() {
+        this.subjectCount = this.subjectCount+1;
+        return this.subjectCount;
+    }
+
+    public int getSubjectCount() {
+        return this.subjectCount;
+    }
+
 }

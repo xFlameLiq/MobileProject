@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.mobileproject.R;
 import com.example.mobileproject.databinding.FragmentGalleryBinding;
 
-//import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
 
 public class GalleryFragment extends Fragment {
 

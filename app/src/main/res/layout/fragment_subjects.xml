@@ -25,18 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtDebug"
-            android:layout_width="271dp"
-            android:layout_height="136dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="195dp"
-            android:layout_marginEnd="70dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnAddSubject" />
-
         <Button
             android:id="@+id/btnAddSubject"
             android:layout_width="160dp"
@@ -86,6 +74,16 @@
             android:text="@string/btnRefreshSubject"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTeachSub" />
+
+        <TextView
+            android:id="@+id/txtDebug"
+            android:layout_width="350dp"
+            android:layout_height="299dp"
+            android:layout_marginTop="76dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddSubject" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

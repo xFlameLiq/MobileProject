@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         String[] arrayGrade = {"1", "2", "3", "4", "5", "6", "7", "8"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, arrayGrade);
         spGrade.setAdapter(adapter);
-        subjectsObj = new Subjects("", "");
+        subjectsObj = new Subjects(0,"", "");
         subjects.add(subjectsObj);
     }
 
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         else {
-            Toast.makeText(this, "Por favor llena todos los campos del registro", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor llena todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobileproject.databinding.FragmentHomeBinding;
 import com.example.mobileproject.databinding.FragmentSubjectsBinding;
@@ -87,31 +88,29 @@ public class fragment_subjects extends Fragment {
         txtTeachSub = rootView.findViewById(R.id.txtTeachSub);
         btnAddSubject = rootView.findViewById(R.id.btnAddSubject);
         btnRefreshSubjects = rootView.findViewById(R.id.btnRefresh);
+
         sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
         int verificador = (sesionUser.users.returnUser());
         subjects = sesionUser.users.user[verificador].getSubjects();
-
-//        String infoPerfil = "Nombre: " + sesionUser.users.user[verificador].getNombre() + "\n" +
-//                "Apellido: " + sesionUser.users.user[verificador].getApellido() + "\n" +
-//                "Correo electronico: " + sesionUser.users.user[verificador].getEmail() + "\n" +
-//                "Contraseña: " + sesionUser.users.user[verificador].getPass() + "\n" +
-//                "Registro: " + sesionUser.users.user[verificador].getRegistro() + "\n" +
-//                "Grado: " + sesionUser.users.user[verificador].getGrado() + "\n" +
-//                "Materia: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameSub() + "\n" +
-//                "Profesor: " + sesionUser.users.user[verificador].getSubjects().get(0).getNameTea();
 
 
         btnAddSubject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
-                int verificador = (sesionUser.users.returnUser());
+                if(!(txtNameSub.getText().toString().equals("") || txtTeachSub.getText().toString().equals(""))) {
+                    sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
+                    int verificador = (sesionUser.users.returnUser());
+                    int idSubjects = sesionUser.users.addSubjectCount();
+                    String nameSub = txtNameSub.getText().toString();
+                    String nameTeacher = txtTeachSub.getText().toString();
+                    subjectsObj = new Subjects(idSubjects, nameSub, nameTeacher);
+                    subjects.add(subjectsObj);
+                    sesionUser.users.user[verificador].setSubjects(subjects);
+                    Toast.makeText(getContext(), "Materia agregada correctamente", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Favor de llenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
 
-                String nameSub = txtNameSub.getText().toString();
-                String nameTeacher = txtTeachSub.getText().toString();
-                subjectsObj = new Subjects(nameSub, nameTeacher);
-                subjects.add(subjectsObj);
-                sesionUser.users.user[verificador].setSubjects(subjects);
             }
         });
 
@@ -123,7 +122,7 @@ public class fragment_subjects extends Fragment {
                 int size = sesionUser.users.user[verificador].getSubjects().size();
                 String infoPerfil = "";
                 for (int i = 1; i < size; i++) {
-                    infoPerfil += "Nombre: " + sesionUser.users.user[verificador].getNombre() + "\n" +
+                    infoPerfil += "Identificador: " + sesionUser.users.user[verificador].getSubjects().get(i).getId() + "\n" +
                             "Materia: " + sesionUser.users.user[verificador].getSubjects().get(i).getNameSub() + "\n" +
                             "Profesor: " + sesionUser.users.user[verificador].getSubjects().get(i).getNameTea()+ "\n";
                 }

@@ -39,12 +39,12 @@ public class LoginActivity extends AppCompatActivity {
                 intentSubjects.putExtra("User", sesionUser);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "No encontrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
             }
         }
 
         else {
-            Toast.makeText(this, "Por favor llena todos los campos del login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor llena todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
 
