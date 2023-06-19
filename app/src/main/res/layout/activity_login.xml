@@ -15,7 +15,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="100dp"
-        android:text="¿CREATE NEW ACCOUNT?"
+        android:text="¿CREATE A NEW ACCOUNT?"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"

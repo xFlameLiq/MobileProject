@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import com.example.mobileproject.databinding.FragmentHomeBinding;
 import com.example.mobileproject.databinding.FragmentSubjectsBinding;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -89,9 +92,13 @@ public class fragment_subjects extends Fragment {
         btnAddSubject = rootView.findViewById(R.id.btnAddSubject);
         btnRefreshSubjects = rootView.findViewById(R.id.btnRefresh);
 
+
         sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
         int verificador = (sesionUser.users.returnUser());
         subjects = sesionUser.users.user[verificador].getSubjects();
+
+
+
 
 
         btnAddSubject.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +113,8 @@ public class fragment_subjects extends Fragment {
                     subjectsObj = new Subjects(idSubjects, nameSub, nameTeacher);
                     subjects.add(subjectsObj);
                     sesionUser.users.user[verificador].setSubjects(subjects);
+                    txtNameSub.setText("");
+                    txtTeachSub.setText("");
                     Toast.makeText(getContext(), "Materia agregada correctamente", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getContext(), "Favor de llenar todos los campos", Toast.LENGTH_SHORT).show();
@@ -118,14 +127,15 @@ public class fragment_subjects extends Fragment {
             @Override
             public void onClick(View v) {
                 sesionUser = (SesionUser) getActivity().getIntent().getSerializableExtra("User");
-                int verificador = (sesionUser.users.returnUser());
                 int size = sesionUser.users.user[verificador].getSubjects().size();
+                int verificador = (sesionUser.users.returnUser());
                 String infoPerfil = "";
                 for (int i = 1; i < size; i++) {
                     infoPerfil += "Identificador: " + sesionUser.users.user[verificador].getSubjects().get(i).getId() + "\n" +
                             "Materia: " + sesionUser.users.user[verificador].getSubjects().get(i).getNameSub() + "\n" +
-                            "Profesor: " + sesionUser.users.user[verificador].getSubjects().get(i).getNameTea()+ "\n";
+                            "Profesor: " + sesionUser.users.user[verificador].getSubjects().get(i).getNameTea()+ "\n\n";
                 }
+
                 txtDebug.setText(infoPerfil);
             }
         });
